@@ -22,7 +22,13 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	     $empleado = $this-> crearDefault(); 
 	    $this->assertEquals( 50123635 $empleado->getDni());
     }
+    
+	//Test para getSalario
+	public function testFuncionaObtenerSalario()
+	{
+		$empleado = $this-> crearDefault(); 
+		$this->assertEquals("50000", $empleado->getSalario());
+	} 
 
 
-
-	}
+}
