@@ -82,8 +82,15 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	public function testSalarioVacio()
 	{
 		$this->expectException(\Exception::class);
-		$this-> crearDefault("Alejandra", "Adalid", 50123635, ""); 
+		$this-> crearDefault("Alejandra", "Adalid", "50123635", ""); 
 		
 	}
 
+	//Probar que si intento construir un empleado cuyo DNI contenga letras o caracteres no numéricos, lanza una excepción.
+       
+	public function testDniValoresNoNumericos()
+	{
+		$this->expectException(\Exception::class);
+		$this-> crearDefault("Alejandra", "Adalid", "52123635-", "50000"); 
+	}
 }
