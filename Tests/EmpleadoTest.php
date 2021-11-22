@@ -73,10 +73,17 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 
 	public function testDNIVacio()
 	{
-		$this->expectException(\Exception::class); //Aviso que espero una excepción
-		$this-> crearDefault("Alejandra", "Adalid", "", "50000"); //Intento crear un empleado sin dni 
+		$this->expectException(\Exception::class); 
+		$this-> crearDefault("Alejandra", "Adalid", null, "50000"); 
 	}
-	
 
+    //Probar que si intento construir un empleado con el salario vacío, lanza una excepción.
+
+	public function testSalarioVacio()
+	{
+		$this->expectException(\Exception::class);
+		$this-> crearDefault("Alejandra", "Adalid", 50123635, ""); 
+		
+	}
 
 }
