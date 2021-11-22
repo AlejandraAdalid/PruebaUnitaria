@@ -20,7 +20,13 @@ class EmpleadoEventualTest extends EmpleadoTest
     public function testFuncionaMetodoCalcularIngresoTotal()
     {
         $empleadoEv = $this->crearDefault();
-        $this->assertEquals(58100, $empleadoEv->calcularIngresoTotal());
+        $this->assertEquals(581000, $empleadoEv->calcularIngresoTotal());
     }
-
+     
+    //Probar que si intento construir un empleado proporcionando algún monto de venta negativo o cero, lanza una excepción.
+    public function testMontoInvalido()
+    {
+        $this->expectException(\Exception::class);
+        $empleadoEv = $this->crearDefault("Alejandra", "adalid", 50123635, 50000, $array = array(10, 20, 50,-80));
+    }
 }
