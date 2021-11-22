@@ -19,5 +19,12 @@ public function testCrearIngreso(){
     $this->assertEquals($fechaActual->format('Y-m-d'), $empleadoPe->getFechaIngreso()->format('Y-m-d'));
 }
 
+//Probar que el método calcularComision() funciona como se espera.
+public function testCalcularComisionAntiguedad(){
+    $ingreso = new DateTime(); 
+    $ingreso->modify('-10 years'); 
+    $empleadoPe= $this->crearDefault("Alejandra", "Adalid", 50123635, 50000, $ingreso); 
+    $this->assertEquals("10%",$empleadoPe->calcularComision());
+}
 
 }
