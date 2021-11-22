@@ -1,5 +1,6 @@
 <?php
-abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
+
+class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	
 	//Funcion crear crea un empleado
 	public function crearDefault($nombre = "Alejandra", $apellido = "Adalid", $dni = "50123635", $salario = "50000")
@@ -14,6 +15,14 @@ abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 		$empleado = $this-> crearDefault(); 
 		$this->assertEquals("Alejandra Adalid", $empleado->getNombreApellido());
 	}
+
+         //Test para getDni
+    public function testFuncionaObtenerDni()
+    {
+	     $empleado = $this-> crearDefault(); 
+	    $this->assertEquals( 50123635 $empleado->getDni());
+    }
+
 
 
 	}
