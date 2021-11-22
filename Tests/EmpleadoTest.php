@@ -99,7 +99,7 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 
 	public function testNoSeIdentificaSector()
 	{
-		$empleado = $this-> crearDefault("Alejandra", "Adalid", "50123635", "50000"); // Creo una nueva instancia para no enviar sector por default
+		$empleado = $this-> crearDefault("Alejandra", "Adalid", "50123635", "50000"); 
 		$this->assertEquals("No especificado", $empleado->getSector());
 	}
 
