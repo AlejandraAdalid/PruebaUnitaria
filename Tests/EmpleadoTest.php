@@ -39,4 +39,18 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 		$empleado->setSector("Backend"); 
 		$this->assertEquals("Backend", $empleado->getSector());
 	}
+
+	//Test para ToString
+	public function testFuncionaToString()
+	{
+		$empleado = $this->crearDefault(); 
+		$this->assertEquals("Alejandra adalid 50123635 50000", $empleado);
+	
+		$this->assertEquals("Alejandra adalid 50123635 50000", $empleado->__toString()); 
+	
+		$this->assertEquals("Alejandra adalid 50123635 50000", $empleado . ""); 
+	
+		$this->assertEquals("Alejandra adalid 50123635 50000", strval($empleado)); /
+	}
+
 }
