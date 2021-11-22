@@ -59,4 +59,17 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	{
 		$this->expectException(\Exception::class); 
 		$this-> crearDefault("", "adalid", 50123635, "50000"); 
+	}
+	
+	//Probar que si intento construir un empleado con el apellido vacío, lanza una excepción.
+
+	public function testApellidoVacio()
+	{
+		$this->expectException(\Exception::class); 
+		$this-> crearDefault("Alejandra", "", 50123635, "50000"); 
+	}
+
+	
+
+
 }
