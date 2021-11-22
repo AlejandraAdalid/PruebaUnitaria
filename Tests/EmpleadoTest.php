@@ -3,9 +3,9 @@
 class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	
 	//Funcion crear crea un empleado
-	public function crearDefault($nombre = "Alejandra", $apellido = "Adalid", $dni = "50123635", $salario = "50000")
+	public function crearDefault($nombre = "Alejandra", $apellido = "Adalid", $dni = 50123635, $salario = "50000")
 	{
-		$empleado = new \App\Empleado ($nombre, $apellido, $dni , $salario);
+		$empleado = new \App\Empleado($nombre, $apellido, $dni , $salario);
 		return $empleado;
 	}
 
@@ -17,11 +17,12 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	}
 
          //Test para getDni
-    public function testFuncionaObtenerDni()
-    {
-	     $empleado = $this-> crearDefault(); 
-	    $this->assertEquals( 50123635 $empleado->getDni());
-    }
+		 public function testFuncionaObtenerDni()
+		 {
+			 $empleado = $this-> crearDefault();
+			 $this->assertEquals(50123635, $empleado->getDni());
+		 }
+	 
     
 	//Test para getSalario
 	public function testFuncionaObtenerSalario()
@@ -31,7 +32,8 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	} 
 
     // Test para setSector y getSector
-
+	public function testFuncionaSector()
+	
 	{
 		$empleado = $this->crearDefault(); 
 		$this->assertEquals("No especificado", $empleado->getSector());
@@ -50,7 +52,7 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	
 		$this->assertEquals("Alejandra adalid 50123635 50000", $empleado . ""); 
 	
-		$this->assertEquals("Alejandra adalid 50123635 50000", strval($empleado)); /
+		$this->assertEquals("Alejandra adalid 50123635 50000", strval($empleado)); 
 	}
 
     //Probar que si intento construir un empleado con el nombre vacío, lanza una excepción.
