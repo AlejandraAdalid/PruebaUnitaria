@@ -53,4 +53,10 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 		$this->assertEquals("Alejandra adalid 50123635 50000", strval($empleado)); /
 	}
 
+    //Probar que si intento construir un empleado con el nombre vacío, lanza una excepción.
+    
+	 public function testNombreVacio()
+	{
+		$this->expectException(\Exception::class); 
+		$this-> crearDefault("", "adalid", 50123635, "50000"); 
 }
