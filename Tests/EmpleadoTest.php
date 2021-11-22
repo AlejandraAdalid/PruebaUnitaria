@@ -30,5 +30,13 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 		$this->assertEquals("50000", $empleado->getSalario());
 	} 
 
+    // Test para setSector y getSector
 
+	{
+		$empleado = $this->crearDefault(); 
+		$this->assertEquals("No especificado", $empleado->getSector());
+		
+		$empleado->setSector("Backend"); 
+		$this->assertEquals("Backend", $empleado->getSector());
+	}
 }
