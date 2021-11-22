@@ -43,11 +43,19 @@ abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	public function testFuncionaToString()
 	{
 		$empleado = $this->crearDefault(); 
-		$this->assertEquals("Alejandra Rosalen 50123635 50000", $empleado);
+		$this->assertEquals("Alejandra adalid 50123635 50000", $empleado);
 	
-		$this->assertEquals("Alejandra Rosalen 50123635 50000", $empleado->__toString()); 
+		$this->assertEquals("Alejandra adalid 50123635 50000", $empleado->__toString()); 
 	
-		$this->assertEquals("Alejandra Rosalen 50123635 50000", $empleado . ""); 
+		$this->assertEquals("Alejandra adalid 50123635 50000", $empleado . ""); 
 	
-		$this->assertEquals("Alejandra Rosalen 50123635 50000", strval($empleado)); /
+		$this->assertEquals("Alejandra adalid 50123635 50000", strval($empleado)); /
+	}
+
+	//Probar que si intento construir un empleado con el nombre vacío, lanza una excepción.
+
+	public function testNombreVacio()
+	{
+		$this->expectException(\Exception::class); 
+		$this-> crearDefault("", "adalid", 50123635, "50000"); 
 	}
