@@ -87,10 +87,20 @@ class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	}
 
 	//Probar que si intento construir un empleado cuyo DNI contenga letras o caracteres no numéricos, lanza una excepción.
+
        
 	public function testDniValoresNoNumericos()
 	{
 		$this->expectException(\Exception::class);
 		$this-> crearDefault("Alejandra", "Adalid", "52123635-", "50000"); 
 	}
+
+	//Probar que si, al intentar construir un empleado, no se especifica el sector, el método getSector debe devolver la cadena “No especificado”.
+
+	public function testNoSeIdentificaSector()
+	{
+		$empleado = $this-> crearDefault("Alejandra", "Adalid", "50123635", "50000"); // Creo una nueva instancia para no enviar sector por default
+		$this->assertEquals("No especificado", $empleado->getSector());
+	}
+
 }
