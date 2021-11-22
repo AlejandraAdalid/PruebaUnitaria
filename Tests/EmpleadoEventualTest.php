@@ -9,10 +9,18 @@ class EmpleadoEventualTest extends EmpleadoTest
 		return $empleadoEventual;
 	}
 
-    //Test para calcular comisión
+    //Probar que el método calcularComision() funciona como se espera.
 	public function testCalcularComision()
     {
         $empleadoEv= $this->crearDefault(); 
-        $this->assertEquals(106.875, $empleadoEv->calcularComision());
+        $this->assertEquals(58100, $empleadoEv->calcularComision());
     }
+
+   // Probar que el método calcularIngresoTotal() funciona como se espera.
+    public function testFuncionaMetodoCalcularIngresoTotal()
+    {
+        $empleadoEv = $this->crearDefault();
+        $this->assertEquals(58100, $empleadoEv->calcularIngresoTotal());
+    }
+
 }
