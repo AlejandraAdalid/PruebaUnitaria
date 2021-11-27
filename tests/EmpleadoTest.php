@@ -1,6 +1,6 @@
 <?php
 
-class EmpleadoTest extends \PHPUnit\Framework\TestCase{
+abstract class EmpleadoTest extends \PHPUnit\Framework\TestCase{
 	
 	//Funcion crear crea un empleado
 	public function crearDefault($nombre = "Alejandra", $apellido = "Adalid", $dni = 50123635, $salario = "50000")
